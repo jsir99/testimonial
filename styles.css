@@ -1,0 +1,122 @@
+.profile{
+    display: flex;
+    width: 14rem;
+    margin-left: 1rem;
+}
+.name, .position {
+    margin: auto;
+}
+.profile img {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 60%;
+    /* height: 100%; */
+    /* transform: scale(0.75); */
+    /* overflow: hidden; */
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    background: RGB(237,242,248);
+    padding: 5% 10%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "dc dc jw kw"
+    "jh pa pa kw";
+    grid-gap: 1.5rem;
+}
+
+.card  {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    position: relative;
+    box-shadow: 0 0.5rem 7px rgba(0,0,0,0.5);
+    transition: 0.4s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 10px rgba(0,0,0,0.3);
+}
+#dc {grid-area: dc; background: RGB(115,63,200);}
+#jw {grid-area: jw; background: RGB(73,85,107);}
+#kw {grid-area: kw; background: #fff;}
+#jh {grid-area: jh; background: #fff;}
+#pa {grid-area: pa; background: RGB(25,33,46);}
+#dc #quote-logo {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    z-index: 0;
+    overflow: hidden;
+
+}
+#dc #quote-logo img {
+    
+    overflow: hidden;
+}
+#dc .profile, #dc .text, #dc .sub-text{
+    position: relative;
+    z-index: 1;
+}
+
+#dc h6, #jw h6,#pa h6 {
+    color: rgba(255,255,255, 0.8);
+}
+#dc p, #jw p,#pa p {
+    color: rgba(255,255,255, 0.6);
+}
+#dc h5, #jw h5,#pa h5{
+    color:rgba(255,255,255,1);
+}
+
+.card h6 {
+    font-size: 1rem; 
+}
+.card h6+p {
+    font-size: 0.8rem;
+}
+.card h5 {
+    font-size: 1.25rem;
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+.card .sub-text p {
+    font-size: 0.8rem;
+    margin: 1rem;
+}
+
+@media only screen and (max-width: 1400px) {
+    .container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "dc dc" 
+        "jw jh"
+        "pa pa"
+        "kw kw";
+    }
+    body{
+        padding: 5% 15%;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "dc"
+        "jw"
+        "jh"
+        "pa"
+        "kw";
+    }
+    #dc #quote-logo {
+        left: 60%;
+    }
+}
